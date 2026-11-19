@@ -19,7 +19,8 @@ const watchlistSlice = createSlice({
   initialState,
   reducers: {
     added: (state, action: PayloadAction<Movie>) => {
-      state.items.push(action.payload); // можно «мутировать»: это работает через Immer
+      const exists = state.items.some((m) => m.id === action.payload.id);
+      if (!exists) state.items.push(action.payload); // можно «мутировать»: это работает через Immer
     },
     removed: (state, action: PayloadAction<number>) => {
       state.items = state.items.filter((m) => m.id !== action.payload);

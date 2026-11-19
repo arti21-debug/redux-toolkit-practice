@@ -1,7 +1,12 @@
 import { useAppDispatch, useAppSelector } from "./app/hooks";
 import SearchShows from "./features/shows/SearchShows";
 import SearchShowsRtk from "./features/shows/SearchShowsRtk";
-import { added, removed, selectWatchedCount } from "./features/watchlist/watchlistSlice";
+import {
+  added,
+  removed,
+  selectWatchedCount,
+  toggleWatched,
+} from "./features/watchlist/watchlistSlice";
 
 export default function App() {
   const items = useAppSelector((state) => state.watchlist.items);
@@ -27,7 +32,9 @@ export default function App() {
           <li key={m.id}>
             {m.title}{" "}
             <button onClick={() => dispatch(removed(m.id))}>Remove</button>
-            <button>{m.watched ? "Watched" : "Mark as watched"}</button>
+            <button onClick={() => dispatch(toggleWatched(m.id))}>
+              {m.watched ? "Watched" : "Mark as watched"}
+            </button>
           </li>
         ))}
       </ul>
