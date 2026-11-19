@@ -1,4 +1,5 @@
 import { useAppDispatch, useAppSelector } from "./app/hooks";
+import SearchShows from "./features/shows/SearchShows";
 import { added, removed, selectWatchedCount } from "./features/watchlist/watchlistSlice";
 
 export default function App() {
@@ -8,6 +9,8 @@ export default function App() {
 
   return (
     <div>
+      <SearchShows />
+
       <button
         onClick={() =>
           dispatch(
