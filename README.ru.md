@@ -6,4 +6,6 @@
 
 **Запуск:** `npm install` → `npm run dev`
 
-**Что отработано:** configureStore, createSlice, типизированные хуки (useAppSelector / useAppDispatch), селекторы, createAsyncThunk, [позже: RTK Query].
+**Что отработано:** configureStore, createSlice, типизированные хуки (useAppSelector / useAppDispatch), селекторы, createAsyncThunk, RTK Query.
+
+**Дополнительно:** поиск сериалов (TVMaze API), реализованный двумя способами: через `createAsyncThunk` и через RTK Query, чтобы сравнить подходы.
